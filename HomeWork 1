@@ -1,0 +1,21 @@
+    import java.util.*;
+
+    public class Main {
+
+        public static void main(String[] args) {
+
+            Scanner number = new Scanner(System.in);
+            System.out.println("Input gross:");
+            int gross = number.nextInt();
+            int mzp=42500;
+            double pensia = 0.1 * gross;
+            double ipn= 0.1*(gross-mzp-pensia);// Подоходный налог
+            double social_o = 0.035 * (gross - pensia);
+            double social_n = (0.1 * (gross - pensia)) - social_o;
+            double med_str = 0.02 * gross;
+            double all_taxes=pensia + ipn + social_o + social_n + med_str;
+            double salary=gross-all_taxes;
+            System.out.println("Your salary, including all taxes:"+salary);
+
+        }
+    }
