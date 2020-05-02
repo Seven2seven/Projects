@@ -1,0 +1,68 @@
+public class Date {
+    int day;
+    int month;
+    int year;
+
+
+public Date(int d, int m, int y) {
+    this.day = d;
+    this.month = m;
+    this.year = y;
+}
+public void setDay(int Days) {
+    if (Days >= 0 && Days <= 31) {
+        this.day = Days;
+    } else {
+        day = 1;
+    }
+}
+
+public void setYear(int Years) {
+    this.year = Years;
+}
+
+public void setMonth(int Months) {
+    if (Months >= 0 && Months <= 12) {
+        this.month = Months;
+    } else {
+        this.month = 1;
+    }
+}
+
+public int getDay() {
+    return day;
+}
+
+public int getMonth() {
+    return month;
+}
+
+public int getYear() {
+    return year;
+}
+
+public void displayDate() {
+    System.out.printf(getDay(), getMonth(), getYear());
+}
+}
+
+
+public class DateTest {
+    public static void main(String[] args) {
+        Date date = new Date(0, 0, 0);
+        Scanner input = new Scanner(System.in);
+        System.out.print("Please enter Day: ");
+        int d = input.nextInt();
+        date.setDay(d);
+
+        System.out.print("Please enter Month: ");
+        int m = input.nextInt();
+        date.setMonth(m);
+
+        System.out.print("Please enter Year: ");
+        int y = input.nextInt();
+        date.setYear(y);
+
+        date.displayDate();
+    }
+}
